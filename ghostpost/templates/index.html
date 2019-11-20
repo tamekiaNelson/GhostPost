@@ -1,0 +1,12 @@
+<h1> Is it a Roast or Boast </h1>
+
+<h2>Jokes are R Us!</h2>
+
+<ul>
+    {% for foo in data %}
+        <li>{{ foo.title }}, posted at {{ foo.submission_time }}</li>
+        <ul>
+            <li> {{ foo.post }}</li>
+        </ul>
+        {% endfor %}
+</ul>
