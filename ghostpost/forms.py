@@ -1,11 +1,8 @@
 from django import forms
+from ghostpost.models import GhostPoster
 
 
-class RoastorBoastAddForm(forms.Form):
-    Boast = forms.BooleanField()
-    Roast = forms.BooleanField()
-    post = forms.CharField(max_length=280)
-    title = forms.CharField(max_length=100)
-    up_votes = forms.IntegerField()
-    down_votes = forms.IntegerField()
-    submission_time = forms.TimeField()
+class RoastorBoastAddForm(forms.ModelForm):
+    class Meta:
+        model = GhostPoster
+        fields = ['is_boast', 'post']

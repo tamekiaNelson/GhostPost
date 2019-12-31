@@ -22,6 +22,11 @@ admin.site.register(GhostPoster)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('postadd/', views.ghostpostaddview)
+    path('', views.index, name='/'),
+    path('addpost/', views.ghostpostaddview, name='addpost'),
+    path('upvote/<int:id>/', views.up_votes, name='upvote'),
+    path('downvote/<int:id>/', views.down_votes, name='downvote'),
+    path('boasts/', views.sort_is_a_boast, name='boast'),
+    path('roasts/', views.sort_is_a_roast, name='roast'),
+    path('all/', views.sort_all_posts, name='all')
 ]
